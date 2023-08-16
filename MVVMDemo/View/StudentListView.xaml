@@ -18,6 +18,7 @@
                             <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
                             <Label Text="{Binding Email}" />
                             <Label Text="{Binding Address}" />
+                            <Label Text="{Binding PhoneNumber}"/>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentListViewModel}},Path=SelectedItemCommand}" CommandParameter="{Binding .}" />
                             </StackLayout.GestureRecognizers>

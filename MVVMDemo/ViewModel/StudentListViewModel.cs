@@ -34,11 +34,11 @@ namespace MVVMDemoWithMAUI.ViewModel
                 {
                     // adding data in Student List object
                     StudentList.Clear();
-                    StudentList.Add(new StudentModel { Name = "jaidee", Address = "Thailand", Email = "abc@gmail.com" });
-                    StudentList.Add(new StudentModel { Name = "meechai", Address = "Thailand", Email = "test@gmail.com" });
-                    StudentList.Add(new StudentModel { Name = "chomjun", Address = "Thailand", Email = "1111@gmail.com" });
-                    StudentList.Add(new StudentModel { Name = "sawat", Address = "Thailand", Email = "1234@gmail.com" });
-                    StudentList.Add(new StudentModel { Name = "thailand", Address = "Thailand", Email = "2222@gmail.com" });
+                    StudentList.Add(new StudentModel { Name = "jaidee", Address = "Thailand", Email = "abc@gmail.com" ,PhoneNumber = "123456789"});
+                    StudentList.Add(new StudentModel { Name = "meechai", Address = "Thailand", Email = "test@gmail.com", PhoneNumber = "11111111111" });
+                    StudentList.Add(new StudentModel { Name = "chomjun", Address = "Thailand", Email = "1111@gmail.com" , PhoneNumber = "2222222" });
+                    StudentList.Add(new StudentModel { Name = "sawat", Address = "Thailand", Email = "1234@gmail.com", PhoneNumber = "333333333" });
+                    StudentList.Add(new StudentModel { Name = "thailand", Address = "Thailand", Email = "2222@gmail.com", PhoneNumber = "444444444" });
                     IsBusy = false; 
                 });
             });
@@ -53,7 +53,7 @@ namespace MVVMDemoWithMAUI.ViewModel
 
         public ICommand SelectedItemCommand => new Command<StudentModel>(async (studentDetail) =>
         {
-            await App.Current.MainPage.DisplayAlert("Selected Student","Selected STudent Name is " + studentDetail.Name, "OK");
+            await App.Current.MainPage.DisplayAlert(title:"Selected Student",message:"Selected STudent Name is " + studentDetail.Name +"\n" +"Student PhonNumber  " +studentDetail.PhoneNumber+"\n"+"StudentAddress  "+studentDetail.Address +"\n"+"studentEmail  "+studentDetail.Email, accept:"OK","yes");
         });
         #endregion
     }
